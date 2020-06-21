@@ -8,14 +8,12 @@
 .child2 img{
     width: 150px;
 }
-
 .parent{  
     border: 1px dashed #e1e1e1;
     width: 100%;
     min-height: 700px;
 
 }
-
 .Msg{
     border-radius: 6px;
     color: white;
@@ -43,8 +41,6 @@
     background-color: #979070;
 }
 
-
-
 .childContainer{
     display: flex;
     align-items: center;
@@ -63,7 +59,6 @@
     flex-direction: column;
     padding: 20px 0px;
 }
-
 .child2{
     background-color: #dcebad;
     border-radius: 10px;
@@ -74,7 +69,6 @@
     align-items: center;
     flex-direction: column;
 }
-
 .grandchild{
     background-color: #f6eab3;
     border-radius: 10px;
@@ -85,17 +79,13 @@
     align-items: center;
     flex-direction: column;
 }
-
-
 .CardIndividual {
     margin: 20px 0px;
 }
-
 .btnApi{
     text-align: center;
     margin: 100px 0px   s;
 }
-
 .getdata{
     background-color: #fafdff;
     padding: 50px 0px;
@@ -107,11 +97,20 @@
     padding-left: 5px;
     margin: 5px 0px;
 }
-
 .male{
     background-color: rgb(153, 189, 255);
     width: 50%;
     border-radius: 20px;
     padding-left: 5px;
     margin: 5px 0px;
+}
+
+@media screen and (max-width: 460px){
+    .Msg{
+        width: 200px;
+    }
+
+    .childContainer{
+        margin-bottom: 20px;
+    }
 }

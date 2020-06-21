@@ -4,17 +4,31 @@ import { Container, Row, Col, Button } from 'reactstrap';
 
 export default function GetData() {
     const [results, setResult] = useState([]);
-    const orderByGender = (type) => {
-        let ordered = [...results].sort((a, b) => a.gender.localeCompare(b.gender))
-        if (!type)
-            ordered.reverse()
-        setResult(ordered)
-    }
-    const orderById = (type) => {
-        let ordered = [...results].sort((a, b) => a.id - b.id);
-        if (!type)
-            ordered.reverse();
-        setResult(ordered);
+
+
+
+    const order = (type) => {
+        let orderedByGender = [...results].sort((a, b) => a.gender.localeCompare(b.gender));
+        let orderedbyId = [...results].sort((a, b) => a.id - b.id);
+        switch (type) {
+            case "0":
+                setResult(orderedbyId);
+                break;
+            case "1":
+                orderedbyId.reverse();
+                setResult(orderedbyId);
+                break;
+            case "2":
+                setResult(orderedByGender);
+                break;
+            case "3":
+                orderedByGender.reverse();
+                setResult(orderedByGender);
+                break;
+            default:
+                break;
+        }
+
     }
     async function fetchData() {
         const res = await fetch("https://gorest.co.in/public-api/users", {
@@ -36,13 +50,13 @@ export default function GetData() {
                     </Col>
                     <Col xl="6">
                         <span>Ordenar por: </span>
-                        <select>
-                            <option value="Ascendiente" onClick={() => orderById(1)} >ID Ascendiente</option>
-                            <option value="Descendiente" onClick={() => orderById(0)}>ID Descendiente</option>
-                            <option value="Masculino" onClick={() => orderByGender(0)}>Masculino</option>
-                            <option value="Femenino" onClick={() => orderByGender(1)}>Femenino</option>
+                        <select onChange={(e) => order(e.target.value)}>
+                            <option value="0">ID Ascendiente</option>
+                            <option value="1">ID Descendiente</option>
+                            <option value="2">Femenino</option>
+                            <option value="3">Masculino</option>
                         </select>
-                        <Button color="link" onClick={() => orderById(1)} > Borrar filtros de ordenamiento </Button><br /><br />
+                        <Button color="link" onClick={() => order(1)} > Borrar filtros de ordenamiento </Button><br /><br />
                     </Col>
                 </Row>
             </Container>
