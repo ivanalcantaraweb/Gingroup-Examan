@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+#root{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.navbar-brand img{
+    width: 150px;
+}
+.child2 img{
+    width: 150px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.parent{  
+    border: 1px dashed #e1e1e1;
+    width: 100%;
+    min-height: 700px;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Msg{
+    border-radius: 6px;
+    color: white;
+    justify-content: center;
+    position: relative;
+    float: right;
+    width: 300px;
+    text-align: center;
+    margin: 50px 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.msgParent .Msg{
+    background-color: #828282;
 }
 
-.App-link {
-  color: #61dafb;
+.msgChild .Msg{
+    background-color: #7eaad2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.msgChild2 .Msg{
+    background-color: #85974c;
+}
+
+.msgGrandChild .Msg{
+    background-color: #979070;
+}
+
+
+
+.childContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 100%;
+}
+
+.child1{
+    background-color: #b3d6f6;
+    border-radius: 10px;
+    width: 100%; 
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0px;
+}
+
+.child2{
+    background-color: #dcebad;
+    border-radius: 10px;
+    width: 100%; 
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.grandchild{
+    background-color: #f6eab3;
+    border-radius: 10px;
+    width: 80%; 
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.CardIndividual {
+    margin: 20px 0px;
+}
+
+.btnApi{
+    text-align: center;
+    margin: 100px 0px   s;
+}
+
+.getdata{
+    background-color: #fafdff;
+    padding: 50px 0px;
+}
+.female{
+    background-color: rgb(255, 182, 219);
+    width: 50%;
+    border-radius: 20px;
+    padding-left: 5px;
+    margin: 5px 0px;
+}
+
+.male{
+    background-color: rgb(153, 189, 255);
+    width: 50%;
+    border-radius: 20px;
+    padding-left: 5px;
+    margin: 5px 0px;
 }
