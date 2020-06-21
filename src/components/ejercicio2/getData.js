@@ -56,7 +56,7 @@ export default function GetData() {
                             <option value="2">Femenino</option>
                             <option value="3">Masculino</option>
                         </select>
-                        <Button color="link" onClick={() => order(1)} > Borrar filtros de ordenamiento </Button><br /><br />
+                        <Button color="link" onClick={() => order(0)} > Borrar filtros de ordenamiento </Button><br /><br />
                     </Col>
                 </Row>
             </Container>
