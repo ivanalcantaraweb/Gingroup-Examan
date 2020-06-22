@@ -4,9 +4,6 @@ import { Container, Row, Col, Button } from 'reactstrap';
 
 export default function GetData() {
     const [results, setResult] = useState([]);
-
-
-
     const order = (type) => {
         let orderedByGender = [...results].sort((a, b) => a.gender.localeCompare(b.gender));
         let orderedbyId = [...results].sort((a, b) => a.id - b.id);
@@ -56,11 +53,10 @@ export default function GetData() {
                             <option value="2">Femenino</option>
                             <option value="3">Masculino</option>
                         </select>
-                        <Button color="link" onClick={() => order(0)} > Borrar filtros de ordenamiento </Button><br /><br />
+                        <Button color="link" onClick={() => order("0")} > Borrar filtros de ordenamiento </Button><br /><br />
                     </Col>
                 </Row>
             </Container>
-
             <Container>
                 <Row>
                     <Col className="btnApi">
@@ -68,8 +64,6 @@ export default function GetData() {
                     </Col>
                 </Row>
             </Container>
-
-
             <Container>
                 <Row>
                     {results.map(result => {
